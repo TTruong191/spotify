@@ -1,0 +1,10 @@
+.player-music {
+    background-color: #0F172A !important;
+}
+.rhap_current-time, .rhap_time rhap_current-time{
+    color: white !important;
+}
+::selection {
+    background-color: transparent;
+    color: turquoise;
+}
