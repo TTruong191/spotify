@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Songs } from '../Context';
 
 const DetailSong = () => {
+    const {song} = useContext(Songs);
     return (
         <div className='col-span-1 p-3'>
             <h2 className='text-cyan-300 font-bold'>Now playing</h2>
-            <h2 className='text-gray-300 text-2xl'>Sing me to sleep</h2>
+            <h2 className='text-gray-400 text-2xl'>{song.name}</h2>
             <div className='flex justify-evenly items-center mt-5  '>
-                <img className='w-[16rem]' src="https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576" alt="avatar" />
+                <img className='w-[16rem]' src={song.links.images[0].url} alt="avatar" />
             </div>
             <div className='flex justify-evenly items-center mt-5'>
-                <img className='rounded-full w-[4rem]' src="https://i.scdn.co/image/ab6761610000e5ebc02d416c309a68b04dc94576" alt="avatar" />
-                <span className='text-white text-2xl'>Alan Walker</span>
+                <img className='rounded-full w-[4rem]' src={song.links.images[1].url} alt="avatar" />
+                <span className='text-white text-2xl'>{song.author}</span>
             </div>
         </div>
     );
